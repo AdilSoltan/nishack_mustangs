@@ -16,7 +16,7 @@ class Student(models.Model):
     balance = models.IntegerField()
     email = models.EmailField()
     password = models.CharField(max_length=255)
-    group = models.ForeignKey(Group, on_delete=models.SET_NULL)
+    group = models.ForeignKey(Group, on_delete=models.CASCADE)
     attendance = models.ManyToManyField(Attendance)
 
 
