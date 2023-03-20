@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views
+from .views import RegIn
 
 urlpatterns = [
-    path("regin/", views.regIn),
+    path("regin/", RegIn),
 ]

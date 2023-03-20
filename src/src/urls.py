@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.urls import re_path as url
 from django.views.generic.base import TemplateView
+
+from aigyr.views import RegIn
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('aigyr.urls')),
     path('', include('frontend.urls')),
-    path('', TemplateView.as_view(template_name="index.html"), name="index")
+    # path('', TemplateView.as_view(template_name="index.html"), name="index"),
+    path('', RegIn.as_view(), name="test")
 ]
